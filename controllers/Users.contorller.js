@@ -3,14 +3,19 @@ let users = require("../users.json");
 module.exports.getAllUsers = (req, res) => {
   res.send(users);
 };
+//get Random User
 module.exports.getRandomUser = (req, res) => {
   const user = users[Math.floor(Math.random() * users.length)];
   res.json(user);
 };
+//Save a  User
+
 module.exports.saveAUser = (req, res) => {
   users.push(req.body);
   res.json(users);
 };
+//Update a User
+
 module.exports.updateAuser = (req, res, next) => {
   const { id } = req.params;
   const newData = users.find((user) => user.id == Number(id));
@@ -24,6 +29,8 @@ module.exports.updateAuser = (req, res, next) => {
   res.send(newData);
   next();
 };
+//Delete a random User
+
 module.exports.deleteAUser = (req, res) => {
   const { id } = req.params;
   console.log(id);
@@ -31,6 +38,8 @@ module.exports.deleteAUser = (req, res) => {
   console.log(users);
   res.send(users);
 };
+//Bulk Update means updating Multiple user
+
 module.exports.bulkUpdate = (req, res, next) => {
   const data = req.body;
   console.log(data);
