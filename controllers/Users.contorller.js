@@ -42,27 +42,4 @@ module.exports.bulkUpdate = (req, res, next) => {
     return user;
   });
   res.send(bulkUpdated);
-
-  // const ids = [];
-  // for (let x of data) {
-  //   ids.push(x.id);
-  //   // const finding = users?.find((user) => user?.id == Number(x?.id));
-  //   // finding.contact = x?.contact;
-  //   // res.send(finding);
-  // }
-  // // console.log(ids);
-  // // let founded;
-  // let numb;
-  // ids.forEach((element) => {
-  //   numb = element;
-  //   console.log(element);
-  //   // let finding = users.find((user) => user.id == Number(element));
-  //   // console.log(finding);
-  //   // founded = finding;
-  // });
-  // console.log(numb);
-
-  // console.log(founded.contact);
-  // res.json(founded);
-  // console.log(data.id);
 };
